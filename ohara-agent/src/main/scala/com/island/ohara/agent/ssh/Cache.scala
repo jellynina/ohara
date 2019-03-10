@@ -146,8 +146,7 @@ object Cache {
             lastUpdate = CommonUtil.current()
           } catch {
             case e: InterruptedException =>
-              // we are closing this thread
-              throw e
+              LOG.info("we are closing this thread")
             case e: Throwable =>
               LOG.error("failed to update cache", e)
           } finally {
